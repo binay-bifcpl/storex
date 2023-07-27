@@ -1,0 +1,23 @@
+<!-- store/templates/store/store_entry_detail.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Store Entry Detail</title>
+</head>
+{% extends 'base.html' %}
+
+
+{% block content %}
+<body>
+    <h1>Store Entry Detail</h1>
+    <p><strong>Name:</strong> {{ entry.name }}</p>
+    <p><strong>Type:</strong> {{ entry.entry_type }}</p>
+    <p><strong>Model:</strong> {{ entry.model }}</p>
+    <p><strong>Serial No:</strong> {{ entry.serial_no }}</p>
+    <p><strong>Date:</strong> {{ entry.date }}</p>
+    <p><strong>Quantity:</strong> {{ entry.quantity }}</p>
+    <p><strong>Remarks:</strong> {{ entry.remarks }}</p>
+{% endblock %}
+</body>
+</html>

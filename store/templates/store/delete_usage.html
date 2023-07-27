@@ -1,0 +1,23 @@
+<!-- store/templates/store/delete_usage.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Usage</title>
+</head>
+<body>
+    {% extends 'base.html' %}
+
+    {% block content %}
+
+    <h1>Delete Usage</h1>
+    <p>Are you sure you want to delete the usage entry with SL No "{{ usage.sl_no }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+    </form>
+    <a href="{% url 'all_usage' %}">Cancel</a>
+    {% endblock %}
+
+</body>
+</html>

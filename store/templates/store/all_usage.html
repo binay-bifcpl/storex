@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Usage Data</title>
+    <style>
+        /* Add your custom CSS styles here (if needed). */
+    </style>
+    <!-- Add the Bootstrap CDN link to your head section -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    {% extends 'base.html' %}
+
+    {% block content %}
+
+    <h1>All Usage Data</h1>
+    <!-- Add the Bootstrap classes to your table element -->
+    <table class="table table-striped table-hover">
+        <tr>
+            <th>SL No</th>
+            <th>Date</th>
+            <th>Product</th>
+            <th>Location</th>
+            <th>Given By</th>
+            <th>Taken By</th>
+            <th>Quantity</th>
+            <th>Remarks</th>
+            <th>Actions</th>
+        </tr>
+        {% for usage in usages %}
+        <tr>
+            <td>{{ usage.sl_no }}</td>
+            <td>{{ usage.date }}</td>
+            <td>{{ usage.product }}</td>
+            <td>{{ usage.location }}</td>
+            <td>{{ usage.given_by }}</td>
+            <td>{{ usage.taken_by }}</td>
+            <td>{{ usage.quantity }}</td>
+            <td>{{ usage.remarks }}</td>
+            <td>
+                <a href="{% url 'edit_usage' usage.id %}">Edit</a>
+                <a href="{% url 'delete_usage' usage.id %}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'add_usage' %}">Add New Usage</a>
+    {% endblock %}
+    <!-- Add the Bootstrap CDN script to your body section -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.1/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+

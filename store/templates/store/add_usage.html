@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Usage</title>
+    <style>
+        .form-container {
+          display: flex; /* Use flexbox to center the form */
+          justify-content: center; /* Align the form horizontally */
+          align-items: center; /* Align the form vertically */
+          height: 100vh; /* Set the height of the container to fill the viewport */
+
+        }
+    </style>
+</head>
+<body>
+    {% extends 'base.html' %}
+
+    {% block content %}
+
+    <div class="form-container"> <!-- Add a div container with a class name -->
+        <form method="post">
+            {% csrf_token %}
+            <div>
+                <label for="{{ form.sl_no.id_for_label }}">SL No:</label>
+                {{ form.sl_no }}
+            </div>
+            <div>
+                <label for="{{ form.date.id_for_label }}">Date:</label>
+                {{ form.date }}
+            </div>
+            <div>
+                <label for="{{ form.product.id_for_label }}">Product:</label>
+                {{ form.product }}
+            </div>
+            <div>
+                <label for="{{ form.location.id_for_label }}">Location:</label>
+                {{ form.location }}
+            </div>
+            <div>
+                <label for="{{ form.given_by.id_for_label }}">Given By:</label>
+                {{ form.given_by }}
+            </div>
+            <div>
+                <label for="{{ form.taken_by.id_for_label }}">Taken By:</label>
+                {{ form.taken_by }}
+            </div>
+            <div>
+                <label for="{{ form.quantity.id_for_label }}">Quantity:</label>
+                {{ form.quantity }}
+            </div>
+            <div>
+                <label for="{{ form.remarks.id_for_label }}">Remarks:</label>
+                {{ form.remarks }}
+            </div>
+            <button type="submit">Save</button>
+        </form>
+    </div> <!-- Close the div container -->
+    {% endblock %}
+
+</body>
+</html>
+

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}My Site{% endblock %}</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Custom styles for the navbar */
+        body {
+            background-color: #eee;
+        }
+
+        .navbar {
+            background-color: #3F51B5; /* Change the background color of the navbar */
+        }
+
+        .navbar-brand {
+            color: #fff; /* Change the color of the brand text */
+            font-size: 24px; /* Change the font size of the brand text */
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff; /* Change the color of the navigation links */
+            font-size: 18px; /* Change the font size of the navigation links */
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #FFC107; /* Change the color of the navigation links on hover */
+        }
+
+    </style>
+</head>
+<body>
+    <div id="header">
+        {% block header %}
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">Your Logo or Brand</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{% url 'download_store_entries' %}">All entry excel</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'all_entries' %}">View all</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'add_store_entry' %}">Add Entry</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'add_usage' %}">Out Store</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'all_usage' %}">All out items</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'download_usage' %}">download usage</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                        </li>
+                        <!-- Add more navigation items here -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        {% endblock %}
+    </div>
+
+    <div id="content">
+        {% block content %}
+        <!-- Your content goes here -->
+        {% endblock %}
+    </div>
+
+    <div id="footer">
+        {% block footer %}
+        <p>© 2023 by My Site.</p>
+        {% endblock %}
+    </div>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
